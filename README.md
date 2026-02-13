@@ -2,37 +2,37 @@
 
 A real-time bookmark manager built with Next.js 14, Supabase, and Tailwind CSS. Users can sign in with Google OAuth, add bookmarks, and see them sync in real-time across multiple tabs/devices.
 
-## 🚀 Live Demo
+##  Live Demo
 
-**Live URL:** [Will be added after Vercel deployment]
+**Live URL:** [https://smart-bookmark-app-woad-chi.vercel.app]
 
-**GitHub Repository:** [Your GitHub repo URL]
+**GitHub Repository:** [https://github.com/eb4005/Smart-Bookmark-App]
 
-## ✨ Features
+##  Features
 
-- ✅ Google OAuth authentication (no email/password)
-- ✅ Add bookmarks with URL and title
-- ✅ Private bookmarks (users only see their own)
-- ✅ Real-time updates across multiple tabs
-- ✅ Delete bookmarks
-- ✅ Responsive design with Tailwind CSS
-- ✅ Deployed on Vercel
+-  Google OAuth authentication (no email/password)
+-  Add bookmarks with URL and title
+-  Private bookmarks (users only see their own)
+-  Real-time updates across multiple tabs
+-  Delete bookmarks
+-  Responsive design with Tailwind CSS
+-  Deployed on Vercel
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend:** Next.js 14 (App Router), React 18, TypeScript
 - **Styling:** Tailwind CSS
 - **Backend:** Supabase (Auth, Database, Realtime)
 - **Deployment:** Vercel
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Node.js 18+ and npm
 - A Supabase account ([supabase.com](https://supabase.com))
 - A Google Cloud project for OAuth ([console.cloud.google.com](https://console.cloud.google.com))
 - A Vercel account for deployment ([vercel.com](https://vercel.com))
 
-## 🔧 Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -148,7 +148,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the app.
    - Go back to Google Cloud Console
    - Add `https://your-app.vercel.app/auth/callback` to authorized redirect URIs
 
-## 🎯 How It Works
+##  How It Works
 
 ### Authentication Flow
 
@@ -184,7 +184,7 @@ When you add or delete a bookmark in one tab, all other tabs automatically updat
 - Authentication is handled by Supabase Auth with Google OAuth
 - All API requests are authenticated via HTTP-only cookies
 
-## 🐛 Problems Encountered and Solutions
+## Problems Encountered and Solutions
 
 ### Problem 1: Authentication Session Management
 
@@ -193,10 +193,10 @@ When you add or delete a bookmark in one tab, all other tabs automatically updat
 **Solution:** Switched to `getUser()` which validates the session on every request and is more reliable for server-side auth checks.
 
 ```typescript
-// ❌ Don't use this
+//  Don't use this
 const { data: { session } } = await supabase.auth.getSession()
 
-// ✅ Use this instead
+// Use this instead
 const { data: { user } } = await supabase.auth.getUser()
 ```
 
@@ -263,7 +263,7 @@ const supabase = createServerClient(url, key, {
 
 **Solution:** Environment variables in Vercel must be added through the dashboard (not just in `.env.local`). Also ensured they start with `NEXT_PUBLIC_` to be accessible in client components.
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 smart-bookmark-app/
@@ -292,25 +292,3 @@ smart-bookmark-app/
 └── package.json
 ```
 
-## 🧪 Testing the App
-
-1. **Sign In:** Click "Continue with Google" and authorize with your Google account
-2. **Add a Bookmark:** Enter a title and URL, click "Add Bookmark"
-3. **Real-time Test:** 
-   - Open the app in two browser tabs
-   - Add a bookmark in one tab
-   - Watch it appear instantly in the other tab
-4. **Delete:** Click "Delete" on any bookmark
-5. **Privacy Test:** Sign in with a different Google account - you won't see the previous user's bookmarks
-
-## 📝 License
-
-MIT
-
-## 🤝 Contributing
-
-This is a coding challenge project, but feel free to fork and improve!
-
----
-
-Built with ❤️ using Next.js, Supabase, and Tailwind CSS
