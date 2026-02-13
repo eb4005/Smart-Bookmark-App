@@ -32,3 +32,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+QUICKSTART.md
+PROJECT-OVERVIEW.md
+QUICK-REFERENCE.md
+SUBMISSION.md 
+
+
+
